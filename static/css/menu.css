@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+body {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidebar {
+    color: black;
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    width: 390px;
+    height: 95vh;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 7px 9px 11px 3px rgb(0, 110, 255);
+    transition: all 0.4s ease;
+}
+
+.sidebar.collapsed {
+    width: 150px;
+    height: 85%;
+    box-shadow: 7px 9px 11px 3px rgb(0, 110, 255);
+}
+
+.sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+}
+
+.sidebar-header .header-logo img {
+    height: 100px;
+    width: 100px;
+    display: block;
+    object-fit: contain;
+}
+
+.sidebar-header .sidebar-toggler {
+    color: rgb(0, 0, 0);
+    position: absolute;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: red;
+}
+
+.sidebar-header .sidebar-toggler:hover {
+    color: white;
+    background: red;
+}
+
+.sidebar.collapsed .sidebar-toggler {
+    transform: translate(-40px, 80px);
+}
+
+.sidebar-header .sidebar-toggler span {
+    font-size: 1.75em;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-toggler span {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav {
+    overflow-y: auto;
+    height: calc(100vh - 204px);
+    padding-bottom: 50px;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.sidebar-nav:hover {
+    scrollbar-color: #000000 transparent;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 15px;
+    transform: translateY(15px);
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .nav-list {
+    transform: translateY(65px);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    padding: 11px 50px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    transition: 0.4s ease;
+}
+
+.nav-link:hover:not(.dropdown-title) {
+    color: #ffffff;
+    background: red;
+}
+
+.sidebar.collapsed .nav-link :where(.nav-label, .bx-chevron-down) {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dropdown-container .bx-chevron-down {
+    margin: 0 -4px 0 auto;
+    transition: transform 0.4s ease, opacity 0.3s 0.2s ease;
+}
+
+.sidebar.collapsed .bx-chevron-down {
+    transition: opacity 0.3s 0s ease;
+}
+
+.dropdown-menu {
+    height: 15px;
+    overflow-y: hidden;
+    list-style: none;
+    padding-left: 50px;
+    transition: height 0.4s ease;
+}
+
+.sidebar.collapsed .dropdown-menu {
+    position: absolute;
+    width: 200px;
+    left: 100%;
+    top: -10px;
+    opacity: 0;
+    height: auto;
+    overflow-y: unset;
+    pointer-events: none;
+    background: #ffffff;
+    box-shadow: 7px 9px 11px 3px rgb(0, 110, 255);
+    padding: 7px 10px 7px 24px;
+    border-radius: 0 10px 10px 0;
+    transition: 0s;
+}
+
+.sidebar.collapsed .nav-item:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(30px);
+    transition: 0.4s ease;
+}
+
+.dropdown-menu .nav-item .nav-link {
+    padding: 9px 15px;
+}
+
+.sidebar.collapsed .dropdown-link {
+    padding: 7px 15px;
+}
+
+.dropdown-menu a {
+    color: #ff0000;
+}
+
+.dropdown-title {
+    display: none;
+    font-weight: 500;
+}
+
+.sidebar.collapsed .dropdown-title {
+    display: block;
+}
+
+.sidebar-nav .secondary-nav{
+    top: 75%;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.telefono{
+    width: 400px;
+    height: 550px;
+    margin-left: 55%;
+}

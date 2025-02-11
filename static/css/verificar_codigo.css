@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+body{
+    background-position: 0%;
+    background-image: url(../img/fondo_contraseña.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    margin-top: 100px;
+    width: 400px;
+    height: auto;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 7px 9px 11px 3px rgb(0, 110, 255);
+    text-align: center;
+}
+
+.titulo{
+    font-size: 2em;
+    color: black;
+}
+
+.escrito{
+    font-size: 1.2em;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.inputs{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.codigo{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid gray;
+    background-color: white;
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    caret-color: blue;
+}
+
+.codigo:focus{
+    border: 2px solid gray;
+    color: blue;
+}
+
+.boton{
+    width: 300px;
+    padding: 15px;
+    background-color: #e61515;
+    box-shadow: 5px 5px 25px rgba(197, 3, 3, 0.854), 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    transform: skewX(-10deg);
+}
+
+.boton:hover{
+    color: white;
+    background-color: #8e0b0b;
+    transform: skewX(-10deg) scale(1.05) translateY(-3px); 
+    box-shadow: 5px 5px 25px rgba(197, 3, 3, 0.854), 0 6px 12px rgba(0, 0, 0, 0.2); 
+}

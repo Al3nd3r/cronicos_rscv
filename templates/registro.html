@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="../static/css/registro.css" />
+    <link rel="icon" href="../templates/img/logo_rescarven.png" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="">
+      <h1>Registro de pacientes cronicos de Rescarven</h1>
+
+      <form action="{{url_for ('procesar')}} " method="POST">
+        <div class="input-box">
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre Completo"
+          />
+          <i class="bx bx-male-female"></i>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Correo Electronico"
+          />
+          <i class="bx bxs-envelope"></i>
+        </div>
+
+        <div class="input-box">
+          <input type="number" id="c_i" name="c_i" placeholder="Cedula de Identidad"/>
+          <i class="bx bxs-id-card"></i>
+        </div>
+        <div class="input-box">
+          <input
+            type="text"
+            id="empresa"
+            name="empresa"
+            placeholder="Empresa"
+          />
+          <i class="bx bxs-buildings"></i>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            id="d_empresa"
+            name="d_empresa"
+            placeholder="Direccion de la empresa"
+          />
+          <i class="bx bxs-map-pin"></i>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            id="c_empresa"
+            name="c_empresa"
+            placeholder="Contacto directo de la empresa"
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+
+        <div class="input-box">
+          <input type="text" id="sede" name="sede" placeholder="Sede" />
+          <i class="bx bxs-buildings"></i>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            id="d_sede"
+            name="d_sede"
+            placeholder="Direccion de la sede"
+          />
+          <i class="bx bxs-map-pin"></i>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            id="c_sede"
+            name="c_sede"
+            placeholder="Contacto directo de la sede"
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+
+        <div class="password-container">
+          <input
+            type="password"
+            class="password_login"
+            id="password"
+            name="password"
+            maxlength="20"
+            minlength="8"
+            placeholder="Contraseña"
+            required
+          />
+          <small
+            id="passwordHelp"
+            class="form-text text-muted"
+            style="display: none"
+            >Min 8 y Max 20 caracteres</small
+          >
+          <i class="bx bxs-lock-alt"></i>
+          <img src="../static/img/ver.png" alt="ver" class="ver" id="ver" />
+        </div>
+
+        <div class="password-container">
+          <input
+            type="password"
+            id="c_password"
+            name="c_password"
+            class="c_password"
+            placeholder="Confirma tu contraseña"
+          />
+          <center>
+            <small
+              id="matchHelp"
+              class="form-text text-muted"
+              style="display: none; padding-top: 10px"
+              >Las contraseñas no coinciden</small
+            >
+          </center>
+          <i class="bx bxs-lock-alt"></i>
+          <img
+            src="../static/img/ver.png"
+            alt="Ícono de contraseña"
+            id="ver2"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %}
+
+        <div class="alert-container">
+          {% for category, message in messages %} {% if category in
+          ['register_error'] %}
+          <div class="alert alert-{{ category }}">
+            <img
+              src="{{ url_for('static', filename='img/icerror.png') }}"
+              alt="Error Icon"
+            />
+            <span>{{ message }}</span>
+          </div>
+          {% endif %} {% endfor %}
+        </div>
+        {% endif %} {% endwith %}
+
+        <p>
+          Ya tienes una cuenta?<a href="{{url_for ('ingresar')}}"
+            >Inicia Sesion</a
+          >
+        </p>
+      </form>
+    </div>
+
+    <script src="../static/js/registrarse.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Encuentra todos los contenedores de alertas
+        const alertContainers = document.querySelectorAll(".alert-container");
+
+        // Itera sobre cada contenedor y establece un temporizador para ocultarlos
+        alertContainers.forEach((container) => {
+          setTimeout(() => {
+            container.style.opacity = "0"; // Desvanece la alerta
+            // Elimina el contenedor del DOM después de la transición
+            setTimeout(() => {
+              container.remove();
+            }, 1000); // Tiempo de espera para que termine la animación
+          }, 5000); // Espera 5 segundos antes de comenzar el desvanecimiento
+        });
+      });
+    </script>
+
+    <script>
+      const PasswordInput = document.getElementById("password");
+      const PasswordIcon = document.getElementById("ver");
+
+      PasswordInput.addEventListener("input", () => {
+        if (PasswordInput.value.length > 0) {
+          PasswordIcon.style.display = "block";
+        } else {
+          PasswordIcon.style.display = "none";
+        }
+      });
+    </script>
+
+    <script>
+      const confirmPasswordInput = document.getElementById("c_password");
+      const confirmPasswordIcon = document.getElementById("ver2");
+
+      confirmPasswordInput.addEventListener("input", () => {
+        if (confirmPasswordInput.value.length > 0) {
+          confirmPasswordIcon.style.display = "block";
+        } else {
+          confirmPasswordIcon.style.display = "none";
+        }
+      });
+    </script>
+
+    <script>
+      // Ejemplo para mostrar el mensaje de error
+      document.querySelector(".input-container").classList.add("show-message");
+    </script>
+  </body>
+</html>

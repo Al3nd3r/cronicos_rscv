@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/cambiar_contrasena.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../static/img/logo_rescarven.png" />
+    <title>Cambiar Contraseña</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="titulo">CAMBIAR CONTRASEÑA</h1>
+
+      <p class="escrito">Ingrese Nueva Contraseña</p>
+
+      <!-- Bloque de mensajes flash -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+      <form action="{{ url_for('cambiar_c') }}" method="POST">
+        <div class="n_contrasena">
+
+          <input
+            placeholder="Nueva Contraseña"
+            class="n_contrasena"
+            type="password"
+            id="n_contrasena"
+            name="nueva_contrasena"
+            required
+          />
+          <img src="../static/img/ver.png" alt="ver" class="ver" id="ver"/>
+          <br />
+          </div>
+          
+          <div class="c_contrasena">
+          <input
+            placeholder="Confirmar Contraseña"
+            class="c_contrasena"
+            type="password"
+            id="c_contrasena"
+            name="confirmacion_contrasena" 
+            required
+          />
+          <img src="../static/img/ver.png" alt="Ícono de contraseña" id="ver2">
+
+        </div>
+        <button type="submit" class="boton">Aceptar</button>
+      </form>
+    </div>
+
+    <script src="../static/js/cambiar_contrasena.js"></script>
+    <script>
+      const PasswordInput = document.getElementById('n_contrasena');
+      const PasswordIcon = document.getElementById('ver');
+    
+      PasswordInput.addEventListener('input', () => {
+          if (PasswordInput.value.length > 0) {
+              PasswordIcon.style.display = 'block';
+          } else {
+              PasswordIcon.style.display = 'none';
+          }
+      });
+    </script>
+    <script>
+      const confirmPasswordInput = document.getElementById('c_contrasena');
+      const confirmPasswordIcon = document.getElementById('ver2');
+    
+      confirmPasswordInput.addEventListener('input', () => {
+          if (confirmPasswordInput.value.length > 0) {
+              confirmPasswordIcon.style.display = 'block';
+          } else {
+              confirmPasswordIcon.style.display = 'none';
+          }
+      });
+    </script>
+  </body>
+</html>

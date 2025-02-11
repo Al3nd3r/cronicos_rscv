@@ -1,0 +1,136 @@
+* {
+    margin: 1px;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+body, html {
+    justify-items: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+}
+
+h1 {
+    margin-top: -25px;
+    color: rgb(0, 0, 0);
+}
+
+p {
+    color: rgb(0, 0, 0);
+}
+
+a {
+    color: red;
+}
+
+img {
+    width: 300px;
+    height: 130px;
+}
+
+.cuadro {
+    margin-left: 80px;
+    justify-items: left;
+    background-color: rgb(255, 255, 255);
+    margin-top: 40px;
+    padding: 0;
+    width: 400px;
+    height: 500;
+    border-radius: 10px;
+    box-shadow: 7px 9px 11px 3px rgb(0, 110, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cuadro .ver{
+    display: flex;
+    position: absolute;
+    margin-right: 1010px;
+    right: 10px;
+    top: 48.5%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    color: red;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out; /* Duración y estilo de la transición */
+    
+}
+input.password{
+    margin-top: -20px;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid gray;
+    background-color: white;
+    color: black;
+    font-size: 1.0em;
+    margin-bottom: 10px;
+    caret-color: blue;
+}
+input.password:focus{
+    border: 2px solid gray;
+    color: blue;
+
+}
+input.email{
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid gray;
+    background-color: white;
+    color: black;
+    font-size: 1.0em;
+    margin-bottom: 10px;
+    caret-color: blue;
+}
+input.email:focus{
+    border: 2px solid gray;
+    color: blue;
+}
+
+.sede{
+    margin-top: -20px;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid gray;
+    background-color: white;
+    color: black;
+    font-size: 1.0em;
+    margin-bottom: 10px;
+    caret-color: blue;
+}
+.button{
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    background-color: #e61515;
+    box-shadow: 5px 5px 25px rgba(197, 3, 3, 0.854), 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    transform: skewX(-10deg);
+}
+
+.button:hover{
+    color: white;
+    background-color: #8e0b0b;
+    transform: skewX(-10deg) scale(1.05) translateY(-3px); 
+    box-shadow: 5px 5px 25px rgba(197, 3, 3, 0.854), 0 6px 12px rgba(0, 0, 0, 0.2); 
+}

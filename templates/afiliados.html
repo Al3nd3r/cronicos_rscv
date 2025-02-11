@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/img/logo_rescarven.png" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/css/afiliados.css" />
+    <title>Afiliados</title>
+  </head>
+  <body>
+    <h1>AFILIADOS</h1>
+    <div class="center-vertical">
+      <div class="cuadro">
+        <form action="{{url_for('procesar_afiliado')}}" method="post">
+
+          <input 
+            type="number" 
+            class="cedula" 
+            id="cedula" 
+            name="cedula" 
+            placeholder="C.I" 
+            required/>
+
+            <br><br>
+
+          <input 
+            type="text" 
+            class="nomb" 
+            id="nomb" 
+            name="nomb" 
+            placeholder="Nombre" 
+            required/>
+            &nbsp;&nbsp;&nbsp;
+          <input 
+            type="text" 
+            class="apell" 
+            id="apell" 
+            name="apell" 
+            placeholder="Apellido" 
+            required/>
+            
+
+          <p>Fecha de Nacimiento:</p>
+            <input 
+            type="date" 
+            class="f_naci" 
+            id="f_naci" 
+            name="f_naci" 
+            required/>
+            
+            <p>Sexo:</p>
+            <select 
+              name="sex" 
+              id="sex"
+              class="sex">
+                <option>M</option>
+                <option>F</option>
+            </select>&nbsp;&nbsp;&nbsp;
+        
+          <p>Socio:</p>
+          <select 
+            name="socio" 
+            id="socio">
+              <option>S</option>
+              <option>....</option>
+          </select>
+          <br><br>
+
+          <input 
+            type="number" 
+            id="carnet" 
+            class="carnet" 
+            name="carnet" 
+            placeholder="Carnet" 
+            required/>
+<br><br>
+          <input 
+            type="email" 
+            id="correo" 
+            name="correo" 
+            class="correo" 
+            placeholder="Correo Electronico" 
+            required/>
+
+            <p>Tipo Solicitante:</p>
+            <select name="t_soli" id="t_soli" class="t_soli" required>
+              <option>Hijos Gallegos</option>
+              <option>...</option>
+            </select>
+            <br />
+
+            <p>Estado de Venezuela:</p>
+            <select name="edo" id="edo" class="edo" required>
+              <option>Distrito Capital</option>
+              <option>Carabobo</option>
+              <option>Trujillo</option>
+              <option>Merida</option>
+              <option>Tachira</option>
+            </select>
+            <br /><br />
+
+          <input 
+            type="text" 
+            id="direc" 
+            name="direc" 
+            class="direc" 
+            placeholder="Direccion Corta" 
+            required/>
+          <br><br>
+
+          <form action="{{ url_for('cronicos') }}">
+            <button type="submit">Afiliar</button>
+          </form>
+
+      </div>
+    </div>
+  </body>
+</html>

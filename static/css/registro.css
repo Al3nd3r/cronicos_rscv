@@ -1,0 +1,150 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    min-height: 100vh;
+    background-image: url(../img/fondo_recu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 50px;
+}
+/* Estilos generales del formulario */
+form 
+{
+    float: left;
+    padding-top: 10px;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(255, 0, 0);
+}  
+  /* Estilos para los campos de entrada */
+form input,
+form textarea 
+{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  /* Estilos para el botón de envío */
+button
+{
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    font-size: 15px;
+    border: 2px solid transparent;
+    transition: .3s ease;
+}
+button:hover
+{
+    border: 2px solid cornflowerblue;
+    box-shadow: 0 0 5px cornflowerblue;
+    color: cornflowerblue;
+    background-color: transparent;
+}
+
+.input-box
+{
+    position: relative;
+    margin: 30px 0;
+}
+.input-box input
+{
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid red;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    padding-left: 35px;
+}
+.input-box input::placeholder
+{
+    position: absolute;
+    left: 35px;
+    color: #888;
+    font-weight: 400;
+}
+.input-box i
+{
+    position: absolute;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+}
+.password-container
+{
+    position: relative;
+    margin: 30px 0;
+}
+.password-container input[type="password"] 
+{
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid red;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    padding-left: 35px;
+}
+.password-container input::placeholder
+{
+    position: absolute;
+    left: 35px;
+    color: #888;
+    font-weight: 400;
+}
+.password-container i
+{
+    position: absolute;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+}
+
+.password-container img 
+{
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 33%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out; /* Duración y estilo de la transición */
+}
+.password-container .message {
+    display: none;
+    position: absolute;
+    bottom: -200px; /* Posiciona el mensaje de error */
+    left: 0;
+    color: red; /* Color del mensaje */
+}
+
+.password-container.show-message .message {
+    display: block;
+}

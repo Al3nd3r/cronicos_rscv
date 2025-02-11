@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/correo_electronico.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" href="../static/img/logo_rescarven.png">
+    <title>Correo Electronico</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">CORREO ELECTRONICO</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-message">
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('enviar_correo') }}" method="POST">
+            <p class="escrito">Ingrese su Correo Electronico</p>
+            <br>
+            <div class="inputs">
+                <input placeholder="Correo Electronico" class="correo" type="email" id="email" name="email" required="">
+            </div>
+            <br />
+            <button type="submit" class="boton">Enviar</button>
+        </form>
+        {% if show_register_button %}
+            <br />
+            <a href="{{ url_for('registro') }}" class="boton">Registrarse</a>
+        {% endif %}
+    </div>
+</body>
+</html>
